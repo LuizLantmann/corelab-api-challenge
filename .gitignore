@@ -105,3 +105,6 @@ dist
 
 # Ignore build folder
 /build
+
+#ignore tmp folder
+/tmp
