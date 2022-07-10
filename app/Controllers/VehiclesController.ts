@@ -3,27 +3,12 @@ import { IVehicle } from 'App/Types/Vehicle'
 import Vehicle from 'App/Models/Vehicle'
 
 export default class VehiclesController {
-  public async index(ctx: HttpContextContract) {
-    const vehicles: IVehicle[] = [
-      {
-        id: 1,
-        name: 'First Vehicle',
-        description: 'This is a description of first vehicle',
-        plate: 'DDT-0012',
-        isFavorite: false,
-        year: 2018,
-        color: '#ff00ff',
-        price: 22000,
-        createdAt: new Date(),
-      },
-    ]
   public async index(_ctx: HttpContextContract) {
     const vehicles = await Vehicle.all()
 
     return vehicles
   }
-  public async show(ctt: HttpContextContract) {
-    return { action: 'Show' }
+
   public async create({ request }: HttpContextContract) {
     const params = request.only(['name', 'description', 'plate', 'year', 'color', 'price'])
 
