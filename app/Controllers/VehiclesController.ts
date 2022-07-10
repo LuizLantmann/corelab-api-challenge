@@ -19,4 +19,13 @@ export default class VehiclesController {
 
     return vehicles
   }
+  public async show(ctt: HttpContextContract) {
+    return { action: 'Show' }
+  }
+  public async update(ctt: HttpContextContract) {
+    return { action: 'update' }
+  }
+  public async delete(ctt: HttpContextContract) {
+    return { action: 'delete' }
+  }
 }
