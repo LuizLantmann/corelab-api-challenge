@@ -20,6 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.post('/vehicles', 'VehiclesController.create')
+
 Route.get('/vehicles', 'VehiclesController.index')
 
 Route.get('/vehicles/:id', 'VehiclesController.show')
