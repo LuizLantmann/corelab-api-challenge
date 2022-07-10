@@ -17,6 +17,8 @@ export default class VehiclesController {
         createdAt: new Date(),
       },
     ]
+  public async index(_ctx: HttpContextContract) {
+    const vehicles = await Vehicle.all()
 
     return vehicles
   }
