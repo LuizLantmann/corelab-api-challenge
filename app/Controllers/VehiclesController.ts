@@ -22,8 +22,14 @@ export default class VehiclesController {
     })
     return vehicle
   }
+  public async show({ request }: HttpContextContract) {
+    const params = request.params()
+
+    const vehicle = await Vehicle.find(params.id)
+    return vehicle
   }
-  public async update(ctt: HttpContextContract) {
+
+  public async update(_ctx: HttpContextContract) {
     return { action: 'update' }
   }
   public async delete(ctt: HttpContextContract) {
