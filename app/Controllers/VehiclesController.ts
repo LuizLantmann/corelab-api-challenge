@@ -29,8 +29,15 @@ export default class VehiclesController {
     return vehicle
   }
 
-  public async update(_ctx: HttpContextContract) {
-    return { action: 'update' }
+  public async update({ request }: HttpContextContract) {
+    const params = request.params()
+    const vehicleParams = request.only(['name', 'description', 'plate', 'year', 'color', 'price'])
+
+    const vehicle = await Vehicle.find(params.id)
+    vehicle?.merge(vehicleParams)
+    vehicle?.save()
+
+    return vehicle
   }
   public async delete({ request }: HttpContextContract) {
     const params = request.params()
