@@ -29,3 +29,5 @@ Route.get('/vehicles/:id', 'VehiclesController.show')
 Route.put('/vehicles/:id', 'VehiclesController.update')
 
 Route.delete('/vehicles/:id', 'VehiclesController.delete')
+
+Route.put('/favorites/:id', 'FavoritesController.update')
