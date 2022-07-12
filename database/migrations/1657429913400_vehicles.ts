@@ -10,7 +10,7 @@ export default class extends BaseSchema {
       table.string('description')
       table.string('plate').notNullable()
       table.string('color').notNullable()
-      table.boolean('isFavorite').defaultTo(false)
+      table.boolean('is_favorite').defaultTo(false)
       table.integer('year').notNullable()
       table.float('price').notNullable()
       /**
