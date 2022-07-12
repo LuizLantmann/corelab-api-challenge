@@ -30,4 +30,6 @@ Route.put('/vehicles/:id', 'VehiclesController.update')
 
 Route.delete('/vehicles/:id', 'VehiclesController.delete')
 
+Route.get('/search', 'SearchController.index')
+
 Route.put('/favorites/:id', 'FavoritesController.update')
